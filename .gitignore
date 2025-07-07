@@ -1,0 +1,47 @@
+# Binaries for programs and plugins (built for various OS/ARCH)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.out
+
+# Linux, macOS (Darwin), and Windows build outputs
+*.linux
+*.darwin
+*.windows
+*.linux-amd64
+*.darwin-amd64
+*.windows-amd64
+
+# Common Go build artifacts
+*.test
+*.tmp
+*.log
+
+# Go module/vendor directories (optional)
+vendor/
+
+# Dependency directories (if you use tools like dep or glide)
+Gopkg.lock
+Gopkg.toml
+
+# Go workspace file
+go.work
+go.work.sum
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Build cache
+/build/
+bin/
+dist/
+
