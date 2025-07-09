@@ -1,72 +1,179 @@
 # Official Documentation
 
-    https://go.dev/doc/
-    https://pkg.go.dev/
+* [The Go Programming Language Documentation](https://go.dev/doc/)
+* [pkg.go.dev (Go Package Index)](https://pkg.go.dev/)
 
-## 1. Display all packages or lists and initialise a specific package in golang and build
+---
 
-    go mod init package_name
-    go build .
-    go list -m all
+## 1. Display all packages, initialize a module, and build
 
-## 2. Run the golang program
+```bash
+# Initialize a new module in the current directory
+go mod init <module_name>
 
-    go run main.go
+# Build the module in the current directory
+go build .
 
-## 3. gopath and godocs
+# List all required modules & versions
+go list -m all
+```
 
-    go help
-    go help gopath
+---
 
-## 4. Some important packages in golang
+## 2. Run the Go program
 
-    fmt
-    strings
-    bufio
-    os
-    strconv
-    sort
-    math/rand
-    io/ioutil
-    net/http
-    net/url
-    encoding/json
-    log
-    time
+```bash
+# run main.go file
+go run main.go
 
-## 5. Set the golang environment and build for different os
+# run main.go file with race flag
+go run --race main.go
+```
 
-    go env
-    1. For Unix terminal :
-        GOOS="windows" go build
-        GOOS="linux" go build
-        GOOS="darwin" go build
-    2. For Windows command prompt :
-        set GOOS = windows go build
-        set GOOS = linux go build
-        set GOOS = darwin go build
-    3. For Windows powershell :
-        $env:GOOS = "windows" go build
-        $env:GOOS = "linux" go build
-        $env:GOOS = "darwin" go build
+---
 
-## 6. Modules in golang
+## 3. GOPATH & Go help
 
-    go mod init github.com/sheteshreyash/modules_name
-    go get -u github.com/gorilla/mux
-    go mod tidy (expensive)
-    go mod verify
-    go mod why github.com/gorilla/mux (expensive)
-    go mod graph (expensive)
-    go mod edit -go go_version
-    go mod edit -module new_module_name
-    go mod vendor
+```bash
+# Show general help
+go help
 
-## 7. Start the node js webserver in the Icowebserver directory
+# Show help on GOPATH
+go help gopath
+```
 
-    npm install
-    npm start
+---
 
-## 8. Other requirements
+## 4. Commonly Used Standard Packages
 
-    go get -u github.com/gorilla/mux
+```go
+import (
+    "bufio"
+    "encoding/json"
+    "fmt"
+    "io/ioutil"
+    "log"
+    "math/rand"
+    "net/http"
+    "net/url"
+    "os"
+    "sort"
+    "strconv"
+    "strings"
+    "time"
+    "sync"
+)
+```
+
+---
+
+## 5. Environment & Cross‑Compiling
+
+```bash
+# Show your Go environment
+go env
+```
+
+### Unix / Linux / macOS
+
+```bash
+GOOS="windows" go build   # Build for Windows
+GOOS="linux"   go build   # Build for Linux
+GOOS="darwin"  go build   # Build for macOS
+```
+
+### Windows Command Prompt (cmd.exe)
+
+```cmd
+set GOOS=windows
+go build
+
+set GOOS=linux
+go build
+
+set GOOS=darwin
+go build
+```
+
+### Windows PowerShell
+
+```powershell
+$env:GOOS = "windows"; go build
+$env:GOOS = "linux";   go build
+$env:GOOS = "darwin";  go build
+```
+
+---
+
+## 6. Go Modules
+
+```bash
+# Initialize a module with a repository path
+go mod init github.com/yourusername/yourmodule
+
+# Add or update a dependency
+go get -u github.com/gorilla/mux
+
+# Remove unused dependencies
+go mod tidy
+
+# Verify dependencies have not changed
+go mod verify
+
+# Why a module is needed
+go mod why github.com/gorilla/mux
+
+# Show module requirement graph
+go mod graph
+
+# Edit Go version in go.mod
+go mod edit -go=1.20
+
+# Change module path in go.mod
+go mod edit -module=github.com/yourusername/newmodule
+
+# Create a vendor directory
+go mod vendor
+```
+
+---
+
+## 7. Start the Node.js Webserver
+
+```bash
+cd Icowebserver
+npm install
+npm start
+```
+
+---
+
+## 8. Gorilla Mux (HTTP Router)
+
+```bash
+go get -u github.com/gorilla/mux
+```
+
+---
+
+## 9. MongoDB Go Driver
+
+```bash
+go get go.mongodb.org/mongo-driver/mongo
+```
+
+---
+
+## 10. MongoDB Connection String
+
+```bash
+mongodb://localhost:27017/golangmongobasics
+```
+
+---
+
+## 11. Initialise module with github repository name
+
+```bash
+go mod init github.com/sheteshreyash/module_name
+```
